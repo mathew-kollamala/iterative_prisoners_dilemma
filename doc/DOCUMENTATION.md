@@ -36,11 +36,11 @@ iterative_prisoners_dilemma/
 │   └── README.md          # Quick reference documentation
 ├── res/                   # Static resources
 ├── samples/               # Example code
+│   ├── main_game.py       # Main game simulation with 100 rounds and scoring
 │   └── simple_game.py     # Simple example of using the mixed strategy
 ├── src/                   # Source code
 │   └── mixed_strategy.py  # Implementation of the mixed strategy
 ├── test/                  # Test files
-│   ├── sim_game.py        # Simulation with 100 rounds and scoring
 │   ├── test_gradual_punishment.py  # Tests for gradual strategy
 │   ├── test_mixed_strategy.py      # Tests for mixed strategy
 │   └── test_state_persistence.py   # Tests for state persistence
@@ -123,7 +123,7 @@ state = "Happy"  # Initial state
 for round in range(1, T + 1):
     # Set opponent's action for the current round
     partner_action[round] = opponent_action  # Replace with actual opponent action
-    
+
     # Get your action using the mixed strategy
     action, state = get_action(my_action, partner_action, state, T, round)
     my_action[round] = action
@@ -134,7 +134,7 @@ for round in range(1, T + 1):
 To run the 100-round simulation with scoring:
 
 ```bash
-python -m test.sim_game
+python samples/main_game.py
 ```
 
 This will output:

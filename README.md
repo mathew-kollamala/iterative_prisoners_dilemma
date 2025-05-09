@@ -17,11 +17,16 @@ A mixed strategy model for round robin style iterative prisoner's dilemma.
 ## Getting Started
 
 1. Clone the repository
-2. Run the sample code:
+2. Run the main game simulation:
+   ```
+   python samples/main_game.py
+   ```
+   This runs a 100-round game with a randomly cooperative opponent (50-90% cooperation rate) and calculates scores using the standard Prisoner's Dilemma payoff matrix.
+3. For a simpler example with a predetermined opponent:
    ```
    python samples/simple_game.py
    ```
-3. Run the tests:
+4. Run the tests:
    ```
    bash .build/run_tests.sh
    ```

@@ -49,8 +49,10 @@ python -m test.test_state_persistence
 
 ## Simulation
 
-Run the simulation with scoring:
+Run the main game simulation with scoring:
 
 ```bash
-python -m test.sim_game
+python samples/main_game.py
 ```
+
+This runs a 100-round game with a randomly cooperative opponent (50-90% cooperation rate) and calculates scores using the standard Prisoner's Dilemma payoff matrix.

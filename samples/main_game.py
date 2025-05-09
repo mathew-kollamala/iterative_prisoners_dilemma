@@ -1,5 +1,8 @@
 """
-Simulation file for the mixed strategy model with a 100-round game.
+Main game file for the Iterative Prisoner's Dilemma with a 100-round simulation.
+
+This file simulates a 100-round game with a randomly cooperative opponent
+and calculates scores using the standard Prisoner's Dilemma payoff matrix.
 """
 
 import sys
@@ -10,9 +13,16 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from src.mixed_strategy import get_action
 
-def sim_game():
+def main_game():
     """
-    Simulate a 100-round game to observe strategy transitions and calculate scores.
+    Run a 100-round game with variable opponent behavior and calculate scores.
+    
+    The opponent's cooperation rate is randomly selected between 50% and 90%.
+    Scores are calculated using the standard Prisoner's Dilemma payoff matrix:
+    - Both cooperate (C,C): 3,3
+    - Player defects, opponent cooperates (D,C): 5,0
+    - Player cooperates, opponent defects (C,D): 0,5
+    - Both defect (D,D): 1,1
     """
     # Initialize game with 100 rounds
     T = 100
@@ -37,7 +47,7 @@ def sim_game():
     # Count the actual cooperation rate
     coop_rate = opponent_pattern.count("C") / len(opponent_pattern)
 
-    print(f"Testing a longer game ({T} rounds) with variable opponent behavior")
+    print(f"Running a {T}-round Prisoner's Dilemma game with variable opponent behavior")
     print(f"Target cooperation rate: {coop_probability:.2f} (randomly selected between 0.5 and 0.9)")
     print(f"Actual cooperation rate: {coop_rate:.2f} ({opponent_pattern.count('C')} cooperations, {opponent_pattern.count('D')} defections)")
     print("Switch to T-Spiteful occurs at round", int(T * 0.7))
@@ -120,4 +130,4 @@ def sim_game():
     print(f"  Defections: {spiteful_phase.count('D')} ({spiteful_phase.count('D')/len(spiteful_phase):.2f})")
 
 if __name__ == "__main__":
-    sim_game()
+    main_game()
