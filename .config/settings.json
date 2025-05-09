@@ -1,0 +1,15 @@
+{
+    "default_rounds": 10,
+    "default_state": "Happy",
+    "strategy_switch_percentage": 0.7,
+    "always_defect_last_rounds": 2,
+    "logging": {
+        "enabled": true,
+        "level": "INFO",
+        "file": "game_log.txt"
+    },
+    "visualization": {
+        "enabled": false,
+        "style": "basic"
+    }
+}
